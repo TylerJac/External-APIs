@@ -1,19 +1,35 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API Integration</title>
+  <title>COVID-19 Data</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>API Integration Example</h1>
-  <form action="/fetch-data" method="POST">
-    <input type="text" name="userInput" placeholder="Enter your input" required>
+  <h1>COVID-19 Data by Country</h1>
+  <form action="/fetch-data" method="POST" id="data-form">
+    <input type="text" name="userInput" placeholder="Enter country code (e.g., 'it' for Italy)" required>
     <button type="submit">Fetch Data</button>
   </form>
-  <div id="results"></div>
+  <div id="results" class="results">
+    <div class="result-item">
+      <span class="label">Country:</span>
+      <span class="value" id="country"></span>
+    </div>
+    <div class="result-item">
+      <span class="label">Confirmed Cases:</span>
+      <span class="value" id="confirmed"></span>
+    </div>
+    <div class="result-item">
+      <span class="label">Deaths:</span>
+      <span class="value" id="deaths"></span>
+    </div>
+    <div class="result-item">
+      <span class="label">Recovered Cases:</span>
+      <span class="value" id="recovered"></span>
+    </div>
+  </div>
   <script src="clientLogic.js"></script>
 </body>
 </html>
